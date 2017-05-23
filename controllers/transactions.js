@@ -72,5 +72,26 @@ module.exports = {
         res.send(result)
       })
     })
+  },
+  addBooklist : (req, res)=>{
+    Transaction.findById(req.params.id, (err, query) => {
+      if (err){ 
+        res.send(err)
+      }
+      else{
+        var list = query.booklist
+        list.push(req.body.booklist)
+        Transaction.updateOne({
+          _id: query._id
+        }, {
+          $set: {
+            booklist : list
+          }
+        }, (err, result) => {
+          if (err) res.send(err)
+          res.send(result)
+        })
+      }
+    })
   }
 }

@@ -31,4 +31,5 @@
 |/api/transactions|POST|Insert data transaction|
 |/api/transactions/:id|GET|Get data transaction By Id|
 |/api/transactions/:id|DELETE|Delete data transaction by ID|
-|/api/transactions/:id|PATCH|Update data transaction by ID|
+|/api/transactions/:id|PUT|Update data transaction by ID|
+|/api/transactions/:id|PATCH|Add data booklist in transactions by ID transactions|

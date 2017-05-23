@@ -6,6 +6,7 @@ router.get('/',transactionController.getAll)
 router.post('/',transactionController.insert)
 router.get('/:id',transactionController.getOne)
 router.delete('/:id',transactionController.delete)
-router.patch('/:id',transactionController.update)
+router.put('/:id',transactionController.update)
+router.patch('/:id',transactionController.addBooklist)
 
 module.exports = router
