@@ -3,6 +3,7 @@ var Transaction = require('../models/transactions')
 module.exports = {
   getAll : (req, res)=>{
     Transaction.find({})
+    .populate('booklist')
     .exec((err, result)=>{
       if(err){
         res.send(err)
@@ -14,7 +15,7 @@ module.exports = {
   getOne : (req, res)=>{
     Transaction.findOne({_id : req.params.id})
     .populate('booklist')
-    .then((err, result)=>{
+    .exec((err, result)=>{
       if(err){
         res.send(err)
       }else{
