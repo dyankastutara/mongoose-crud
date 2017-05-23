@@ -9,6 +9,7 @@ mongoose.connect('mongodb://localhost/mongoose-crud', ()=>{
 
 var books = require('./routes/books')
 var customers = require('./routes/customers')
+var transactions = require('./routes/transactions')
 
 var app = express()
 
@@ -16,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : false}))
 app.use('/api/books', books)
 app.use('/api/customers', customers)
-
+app.use('/api/transactions', transactions)
 
 app.listen(3000, function(){
   console.log("Connected to Port 3000")
